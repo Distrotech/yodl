@@ -13,7 +13,7 @@ void l_push(register Lexer *lp, char const *info,
     (*constructor)(media, lp, info);            /* construct new media  */
                                                 /* generates MSG_INFO   */
 
-    stack_push(&lp->d_media_st, media);         /* push new media info  */
+    stack_pushVoidP(&lp->d_media_st, media);    /* push new media info  */
     lp->d_media_ptr = media;                    /* set tos pointer      */
 
     lp->d_lastchar = 0;                         /* something pushed, so */

@@ -3,23 +3,23 @@
 void p_begin_nested(register Parser *pp, HANDLER_SET_ELEMENTS newSet)
 {
                                         /* set up handler set to use        */
-    stack_push(&pp->d_handler_st, pp->d_handler);
+    stack_pushVoidP(&pp->d_handler_st, pp->d_handler);
     pp->d_handler = ps_handlerSet[newSet];
 
                                         /* save the  inserter               */
-    stack_push(&pp->d_insert_st, pp->d_insert);
+    stack_pushVoidP(&pp->d_insert_st, pp->d_insert);
 
     switch (newSet)
     {
         case COLLECT_SET:
-            stack_push(&pp->d_string_st, pp->d_string_ptr);
+            stack_pushVoidP(&pp->d_string_st, pp->d_string_ptr);
             pp->d_string_ptr = string_new(0);
 
             pp->d_insert = p_insert_no_chartab_string;
         break;
 
         case DEFAULT_SET:
-            stack_push(&pp->d_string_st, pp->d_string_ptr);
+            stack_pushVoidP(&pp->d_string_st, pp->d_string_ptr);
             pp->d_string_ptr = string_new(0);
 
             pp->d_insert =

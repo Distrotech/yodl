@@ -38,7 +38,7 @@ void setClasses()
 }
 
 #define COMPILER           "gcc"
-#define COPT               "-O2 -Wall"
+#define COPT               "-O2 -Wall -Werror"
 
 #define ECHO_REQUEST       1
 #define GDB                "-g"

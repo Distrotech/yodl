@@ -21,14 +21,14 @@ char *parser_parlist(register Parser *pp, HANDLER_SET_ELEMENTS newSet)
     pp->d_parlist_filename = new_str(message_filename());
 
     lexer_unget_matched(&pp->d_lexer);
-    stack_push(&pp->d_paren_st, (void *)pp->d_paren);
+    stack_pushInt(&pp->d_paren_st, pp->d_paren);
     pp->d_paren = 0;
 
     p_begin_nested(pp, newSet);
     p_parse(pp);
     str = p_end_nested(pp, newSet);
 
-    pp->d_paren = (size_t)stack_tos(&pp->d_paren_st);
+    pp->d_paren = stack_tos(&pp->d_paren_st).u_int;
     stack_pop(&pp->d_paren_st);
 
     return str;

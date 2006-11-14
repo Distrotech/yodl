@@ -30,16 +30,27 @@ stack_tos()'s return value is always ok.
 
 */
 
+typedef union
+{
+    void       *u_voidP;
+    char const *u_charConstP;
+    char      **u_charPP;
+    int         u_int;
+}
+StackUnion;
+
 typedef struct
 {
-    size_t    d_size;
-    size_t    d_n;
-    void        **d_value;
+    size_t      d_size;
+    size_t      d_n;
+    StackUnion *d_value;
     void (*d_destructor)(void *);
 }
 Stack;
 
-void    stack_assign(Stack *sp, void *value);  /* if empty, value is pushed */
+void    stack_assignVoidP(Stack *sp, void *value);  
+void    stack_assignInt(Stack *sp, int value);
+                                        /* if empty, value is pushed */
                                         /* if used, topmost is destroyed    */
                                         /* and `value' is stored instead    */
 
@@ -50,8 +61,9 @@ void    stack_pop(Stack *sp);           /* removes top elemenet from stack  */
 
                                         /* always SUCCESS, but sp must be   */
                                         /* a valid pointer                  */
-Result  stack_push(Stack *sp, void *value);
-void   *stack_tos(Stack const *sp);     /* ptr->topmost element or PFAILED */
+Result  stack_pushVoidP(Stack *sp, void *value);
+Result  stack_pushInt(Stack *sp, int value);
+StackUnion stack_tos(Stack const *sp);  /* ptr->topmost element or PFAILED */
 size_t stack_size(Stack const *sp);
 
 #endif

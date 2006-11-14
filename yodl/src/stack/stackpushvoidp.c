@@ -1,6 +1,6 @@
 #include "stack.ih"
 
-Result stack_push(register Stack *sp, register void *element)
+Result stack_pushVoidP(register Stack *sp, register void *element)
 {
     register size_t last = sp->d_n++;
 
@@ -8,7 +8,7 @@ Result stack_push(register Stack *sp, register void *element)
         new_size(&sp->d_value, sp->d_size += STACK_BLOCK,
                                                         last, sizeof(void *));
 
-    sp->d_value[last] = element;
+    sp->d_value[last].u_voidP = element;
 
     return SUCCESS;
 }
