@@ -46,7 +46,7 @@ void parser_construct(register Parser *pp,
 
         p_setup_handlerSet();
         stack_construct(&ps_fun_st, 0);
-        stack_push(&ps_fun_st, new_str("Yodl"));
+        stack_pushVoidP(&ps_fun_st, new_str("Yodl"));
 
         counter_insert(symtab_ptr, "XXwrotetext", 0);
     }

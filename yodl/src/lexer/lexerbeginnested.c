@@ -15,7 +15,7 @@ evaluate.
 
 void lexer_begin_nested(register Lexer *lp, register char const *txt)
 {
-    stack_push(&lp->d_empty_st, (void *)lp->d_empty_size);
+    stack_pushInt(&lp->d_empty_st, lp->d_empty_size);
     lp->d_empty_size = stack_size(&lp->d_media_st);
 
     if (message_show(MSG_INFO))

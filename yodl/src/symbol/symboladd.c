@@ -15,6 +15,6 @@ void symbol_add(HashItem *item, char const *text_to_add)
         string_construct(&value, stack_tos(sp).u_charConstP);
         string_addstr(&value, text_to_add);
 
-        stack_assign(sp, string_release(&value));
+        stack_assignVoidP(sp, string_release(&value));
     }
 }
