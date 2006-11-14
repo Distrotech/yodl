@@ -32,8 +32,8 @@ stack_tos()'s return value is always ok.
 
 typedef struct
 {
-    unsigned    d_size;
-    unsigned    d_n;
+    size_t    d_size;
+    size_t    d_n;
     void        **d_value;
     void (*d_destructor)(void *);
 }
@@ -52,6 +52,6 @@ void    stack_pop(Stack *sp);           /* removes top elemenet from stack  */
                                         /* a valid pointer                  */
 Result  stack_push(Stack *sp, void *value);
 void   *stack_tos(Stack const *sp);     /* ptr->topmost element or PFAILED */
-unsigned stack_size(Stack const *sp);
+size_t stack_size(Stack const *sp);
 
 #endif

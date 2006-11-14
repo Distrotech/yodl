@@ -1,13 +1,13 @@
 #include "queue.ih"
 
-void queue_push(register Queue *qp, unsigned extra_length, char const *info)
+void queue_push(register Queue *qp, size_t extra_length, char const *info)
 {
     register char *cp;
-    unsigned memory_length;
-    unsigned available_length;
-    unsigned begin_length;
-    unsigned n_begin;
-    unsigned q_length;
+    size_t memory_length;
+    size_t available_length;
+    size_t begin_length;
+    size_t n_begin;
+    size_t q_length;
 
     if (!extra_length)
         return;

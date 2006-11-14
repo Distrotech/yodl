@@ -1,8 +1,8 @@
 #include "new.ih"
 
-unsigned *new_unsigned(unsigned value)
+size_t *new_size_t(size_t value)
 {
-    unsigned *ret = n_malloc(sizeof(unsigned));
+    size_t *ret = n_malloc(sizeof(size_t));
     *ret = value;
 
     return ret;

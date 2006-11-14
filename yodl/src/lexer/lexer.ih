@@ -25,7 +25,7 @@
 typedef struct Media
 {
     FILE       *d_file;         /* current input file if reading files  */
-    unsigned    d_lineno;       /* linenumber at push-point             */
+    size_t    d_lineno;       /* linenumber at push-point             */
     long        d_offset;       /* offset at push-point                 */
     char       *d_filename;     /* name of the file being processed     */
     Queue       d_queue;        /* queue of chars to process            */
@@ -55,7 +55,7 @@ int             l_media_get(Media *mp);         /* gets next char fm media  */
 bool            l_media_isFile(Media *mp);      /* true: media refers to a  */
                                                 /* file, false: to memory   */
                                                 /* or no media              */
-unsigned        l_media_lineno(Media *mp);      /* 0 (no media) or linenr   */
+size_t        l_media_lineno(Media *mp);      /* 0 (no media) or linenr   */
 void            l_media_push_front(Media *mp, char const *str);
 void            l_media_restore_state(Media *mp);
 void            l_media_save_state(Media *mp);  /* info about current media */
@@ -71,7 +71,7 @@ long            l_media_set_offset(Media *mp);  /* call only when mp refers */
 void            l_media_unget_memory(Media *mp, int ch);
 
 
-void            l_max_replacements_exceeded(unsigned max);
+void            l_max_replacements_exceeded(size_t max);
 LEXER_TOKEN     l_append(Lexer *lp, LEXER_TOKEN token);
 LEXER_TOKEN     l_compound(Lexer *lp);
 int             l_get(Lexer *lp);

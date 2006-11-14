@@ -1,6 +1,8 @@
 #ifndef _INCLUDED_ROOT_H_
 #define _INCLUDED_ROOT_H_
 
+#include <stddef.h>
+
 #define MAX_LINE_LENGTH (1000)
 
 typedef enum

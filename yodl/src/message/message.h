@@ -57,11 +57,11 @@ MESSAGE_SEVERITY;
 
 typedef struct
 {
-    unsigned            d_max_errors;
-    unsigned            d_errors;
+    size_t            d_max_errors;
+    size_t            d_errors;
     char                *d_program_name;
     char                *d_filename;
-    unsigned            d_lineno;
+    size_t            d_lineno;
     MESSAGE_SEVERITY    d_severity;
     MESSAGE_SEVERITY    d_last_show;
     bool                d_warn;
@@ -76,9 +76,9 @@ void    message_error(char const *fmt,...) ATTRIBUTE_FORMAT_PRINTF(1, 2);
 void    message_optarg(char const *opt);
 bool    message_show(MESSAGE_SEVERITY level);
 void    message_setfilename(char const *newname);
-void    message_setlineno(unsigned lineno);
-void    message_setmaxerrors(unsigned max);
-void    message_setmask(unsigned mask);
+void    message_setlineno(size_t lineno);
+void    message_setmaxerrors(size_t max);
+void    message_setmask(size_t mask);
 void    message_setseverity(MESSAGE_SEVERITY level);
 void    message_setverbosity(int mode, char *arg);  /* arg may be modified  */
 void    message_setwarn(bool trueIsOn);
@@ -89,7 +89,7 @@ void    warning(char const* format, ...) ATTRIBUTE_FORMAT_PRINTF(1, 2);
 
 bool                message_errors();
 char const         *message_filename();
-unsigned            message_lineno();
+size_t            message_lineno();
 char const         *message_programname();
 char const         *message_verbosity();           /* returns (hex) mask   */
 char const         *message_version();

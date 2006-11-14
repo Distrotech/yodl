@@ -3,8 +3,8 @@
 void string_additerators(register String *string,
                          char const *begin, char const *end)
 {
-    unsigned oldLength;
-    unsigned newLength;
+    size_t oldLength;
+    size_t newLength;
     int addLength = end - begin;
 
     if (addLength <= 0)

@@ -1,6 +1,6 @@
 #include "macro.ih"
 
-unsigned macro_nArgs(Macro const *macro)
+size_t macro_nArgs(Macro const *macro)
 {
-    return (unsigned)stack_tos(&macro->d_arg);
+    return (size_t)stack_tos(&macro->d_arg);
 }

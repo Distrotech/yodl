@@ -28,7 +28,7 @@ char *parser_parlist(register Parser *pp, HANDLER_SET_ELEMENTS newSet)
     p_parse(pp);
     str = p_end_nested(pp, newSet);
 
-    pp->d_paren = (unsigned)stack_tos(&pp->d_paren_st);
+    pp->d_paren = (size_t)stack_tos(&pp->d_paren_st);
     stack_pop(&pp->d_paren_st);
 
     return str;

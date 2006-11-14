@@ -65,7 +65,7 @@ static char *string_to_string (char const *str)  /* convert escape string */
 static void split_char_and_redef(TextVector *charp, TextVector *redefp, 
                                     TextVector *lines)
 {
-    for (unsigned idx = textvector_size(lines); idx--; )
+    for (size_t idx = textvector_size(lines); idx--; )
     {
         char const *next_line = textvector_at(lines, idx);
         char *newchar = strtok(next_line, "=");
@@ -108,7 +108,7 @@ static void parse_table (char *table, CharTab * chartab)
 
     split_char_and_redef(charp, redefp, lines);
 
-    for (unsigned idx = textvector_size(lines); idx--; )
+    for (size_t idx = textvector_size(lines); idx--; )
     {
         char const *next_char = textvector_at(charp, idx);        
         char const *next_redef = textvector_at(redefp, idx);        
