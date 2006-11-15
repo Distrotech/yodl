@@ -215,6 +215,7 @@ sub makebinary ($) {
     return unless ($run);
 
     print ("Creating binary: $bin (src/bin/$bin)\n");
+    mkdir ("src/bin") if (! -d "src/bin");
     run ("$cc -o src/bin/$bin -Lsrc -l$bin -lyodlrss");
 }
 

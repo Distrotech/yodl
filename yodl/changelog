@@ -1,3 +1,15 @@
+yodl (2.10)
+  * Repaired building problem for Yodl on the amd64 architecture, caused by 
+    different sizes for ints and void *s. Solved by defining a union in
+    stack/stack.h containing the union of pointer and non-pointer types that
+    are pused on the stack, and by defining dedicated stack-operating
+    functions (for ints and void *s separately).
+  * Repaired minor bug in build.pl. This and the previous bugs were detected
+    by Daniel Richard G. (skunk at iskunk dot org)
+  * Added \eu in the chartables to represent the Euro symbol
+
+ -- Frank B. Brokken <f.b.brokken@rug.nl>  Wed, 15 Nov 2006 15:02:48 +0100
+  
 yodl (2.04a)
   * repaired <txt> definition of lchapter.raw, which put the label, rather 
     than the chapter's title in the document's contents.

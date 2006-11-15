@@ -70,6 +70,7 @@ SUBST(\`e)(+NOTRANS(&egrave;))
 SUBST(\"e)(+NOTRANS(&euml;))
 SUBST(\^e)(+NOTRANS(&ecirc;))
 SUBST(\~e)(+NOTRANS(&etilde;))
+SUBST(\eu)(+NOTRANS(&euro;))
 SUBST(\oe)(+NOTRANS(&ering;))
 
 SUBST(\'i)(+NOTRANS(&iacute;))

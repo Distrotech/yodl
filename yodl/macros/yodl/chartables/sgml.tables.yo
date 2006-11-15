@@ -38,6 +38,7 @@ SUBST(\`e)(CHAR(&)egrave;)
 SUBST(\"e)(CHAR(&)euml;)
 SUBST(\^e)(CHAR(&)ecirc;)
 SUBST(\~e)(CHAR(&)etilde;)
+SUBST(\eu)(CHAR(&)euro;)
 SUBST(\oe)(CHAR(&)ering;)
 
 SUBST(\'i)(CHAR(&)iacute;)

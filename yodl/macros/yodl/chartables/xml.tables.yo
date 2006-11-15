@@ -25,6 +25,7 @@ SUBST(\`e)(è)
 SUBST(\"e)(ë)
 SUBST(\^e)(ê)
 SUBST(\~e)(e) 
+SUBST(\eu)(EU)
 SUBST(\oe)(æ)
 
 SUBST(\'i)(í)

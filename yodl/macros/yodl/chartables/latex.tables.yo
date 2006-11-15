@@ -64,6 +64,7 @@ SUBST(\`e)(+latexcommand(\`{e}))
 SUBST(\"e)(+latexcommand(\"{e}))
 SUBST(\^e)(+latexcommand(\^{e}))
 SUBST(\~e)(+latexcommand(\~{e}))
+SUBST(\eu)(+latexcommand({\euro}))
 SUBST(\oe)(+latexcommand(\o{e}))
 
 SUBST(\'i)(+latexcommand(\'{\i}))

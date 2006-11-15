@@ -34,8 +34,7 @@ void gram_PUSHCOUNTER()
         (
             (                       
                 item != PFAILED &&  
-                stack_push((Stack *)hashitem_value(item), (void *)value)
-                                                                    == SUCCESS
+                stack_pushInt((Stack *)hashitem_value(item), value) == SUCCESS
             )
             ||                      
             counter_insert(parser.d_symtab_ptr, name, value) != FAILED

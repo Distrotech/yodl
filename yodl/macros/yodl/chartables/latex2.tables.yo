@@ -22,7 +22,7 @@ DEFINECHARTABLE(standard)(
 )
 
 COMMENT(*** Accent characters. ***
-	Note: chars such as ü are handled by the xlatin1.tex conversion.)
+    Note: chars such as ü are handled by the xlatin1.tex conversion.)
 
 SUBST(\ss)(latexcommand(\ss{}))
 
@@ -37,6 +37,7 @@ SUBST(\'e)(latexcommand(\'{e}))
 SUBST(\`e)(latexcommand(\`{e}))
 SUBST(\"e)(latexcommand(\"{e}))
 SUBST(\^e)(latexcommand(\^{e}))
+SUBST(\eu)(latexcommand({\euro}))
 SUBST(\~e)(latexcommand(\~{e}))
 SUBST(\oe)(latexcommand(\o{e}))
 

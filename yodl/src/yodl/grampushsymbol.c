@@ -17,7 +17,7 @@ void gram_PUSHSYMBOL()
         (
             item != PFAILED
             &&
-            stack_push((Stack *)hashitem_value(item), arg) == SUCCESS
+            stack_pushVoidP((Stack *)hashitem_value(item), arg) == SUCCESS
         )
         ||
         symbol_insert(parser.d_symtab_ptr, name, arg) != FAILED
