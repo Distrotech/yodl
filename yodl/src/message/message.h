@@ -82,17 +82,17 @@ void    message_setmask(size_t mask);
 void    message_setseverity(MESSAGE_SEVERITY level);
 void    message_setverbosity(int mode, char *arg);  /* arg may be modified  */
 void    message_setwarn(bool trueIsOn);
-void    message_incseverity();
+void    message_incseverity(void);
 void    warning(char const* format, ...) ATTRIBUTE_FORMAT_PRINTF(1, 2);
                                                     /* not suppressable     */
 
 
-bool                message_errors();
-char const         *message_filename();
-size_t            message_lineno();
-char const         *message_programname();
-char const         *message_verbosity();           /* returns (hex) mask   */
-char const         *message_version();
-MESSAGE_SEVERITY    message_mask();
+bool                message_errors(void);
+char const         *message_filename(void);
+size_t            message_lineno(void);
+char const         *message_programname(void);
+char const         *message_verbosity(void);           /* returns (hex) mask   */
+char const         *message_version(void);
+MESSAGE_SEVERITY    message_mask(void);
 
 #endif

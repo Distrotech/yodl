@@ -35,7 +35,7 @@ void p_begin_nested(register Parser *pp, HANDLER_SET_ELEMENTS newSet)
 
         case NOTRANS_SET:
             parser_suppress_chartab(pp);
-        // FALL THROUGH
+        /* FALL THROUGH */
 
         case NOEXPAND_SET:
             parser_push_ws_level(pp, 0);

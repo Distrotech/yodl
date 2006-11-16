@@ -59,7 +59,7 @@ int main(int argc, char **argv)
             default:
             return 1;
         }
-        break;                          // only at case -1
+        break;                          /* only at case -1 */
     }
 
     if (argc - optind < 2)
@@ -109,18 +109,18 @@ int main(int argc, char **argv)
         if (getline(&line, &nchars, input) < 0)
             break;
 
-//fprintf(stderr, "%s", 
+/* fprintf(stderr, "%s", */
 
-        if (strstr(line, label) == line)        // matching (end)label
+        if (strstr(line, label) == line)        /* matching (end)label */
         {
-            if (label == endlabel)              // when endlabel: done
+            if (label == endlabel)              /* when endlabel: done */
             {
                 endLabelFound = 1;
                 break;
             }
 
             labelFound = 1;
-            label = endlabel;                   // now search endlabel
+            label = endlabel;                   /* now search endlabel */
             continue;
         }
 
@@ -147,7 +147,7 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    printf(")\n");                              // terminate verb(... by )
+    printf(")\n");                              /* terminate verb(... by ) */
 
     return 0;
 }

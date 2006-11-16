@@ -13,7 +13,7 @@ size_t hm_pjw(char const *key)
         h += *key;
 
                                           /* set most significant nibble */
-        g = h & (0xf << 4 * ((sizeof(size_t) * 2) - 1));
+        g = h & ((size_t)0xf << 4 * ((sizeof(size_t) * 2) - 1));
         if (g)
         {
             h ^= g >> 8;

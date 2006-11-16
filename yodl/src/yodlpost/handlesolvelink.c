@@ -23,7 +23,7 @@ void handle_solvelink(long offset, HashItem *item)
     {
         fprintf(global.d_out, "%s%02d.%s#%s",
                     global.d_noext,
-                    lp->d_filenr,
+                    (int)lp->d_filenr,
                     global.d_ext,
                     label);
     }

@@ -47,7 +47,7 @@ typedef enum
 }
 SymbolType;
 
-void out_of_memory();
+void out_of_memory(void);
 char *new_str(char const *str);
 void root_nop(void *);                  /* do nothing                       */
 

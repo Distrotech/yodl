@@ -15,11 +15,12 @@ void handle_xml_toc(long offset, HashItem *item)
 
     for (idx = 0, n = lines_size(&global.d_toc); idx < n; idx++)
     {
-        size_t nread;
-        size_t labelnr;
+        size_t nread = 0;
+        size_t labelnr = 0;
         char const *line = lines_at(&global.d_toc, idx);
 
-        sscanf(line, "%d %100s %d %n", &level, filename, &labelnr, &nread);
+        sscanf(line, "%d %100s %d %n", &level, filename, (int *)&labelnr, 
+                                                         (int *)&nread);
 /*
         if (level < 0)
         {
@@ -39,7 +40,7 @@ void handle_xml_toc(long offset, HashItem *item)
             "<br />\n",
                 documentbase,
                 filename,
-                labelnr,
+                (int)labelnr,
                 line + nread
         );
 

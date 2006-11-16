@@ -51,10 +51,10 @@ The main function should be set up as follows:
                              long_options_pointer);
 
         if (!args_ok() || args_nArgs() != 2)    /* check arguments */
-            usage();
+            usage(void);
 
         postQueue_construct(task_pointer);
-        postQueue_process();
+        postQueue_process(void);
     }
 
 The usage() function must be defined for the particular postprocessor
@@ -112,8 +112,8 @@ typedef struct
 Task;
 
 void  postqueue_construct(Task const *taskptr);
-FILE *postqueue_istream();
-void  postqueue_process();      /* erases and destroys the HashItem structs */
+FILE *postqueue_istream(void);
+void  postqueue_process(void);      /* erases and destroys the HashItem structs */
                                 /* after calling their handlers             */
 
 #endif
